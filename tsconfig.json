@@ -23,7 +23,6 @@
 		"jsx": "react",
 		"composite": true,
 		"paths": {}
-	}
-	"files": [],
+	},
 	"references": []
 }
