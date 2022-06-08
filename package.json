@@ -25,16 +25,18 @@
     "build": "yarn clean && yarn compile",
     "clean": "rimraf dist tsconfig.tsbuildinfo",
     "compile": "tsc",
+    "format": "eslint --fix ./src/**/*.ts ./test/**/*.ts && yarn format:pkg",
+    "format:pkg": "format-package -w",
     "test": "jest --runInBand --coverage --passWithNoTests"
+  },
+  "resolutions": {
+    "**/@typescript-eslint/eslint-plugin": "^4.14.0",
+    "**/@typescript-eslint/parser": "^4.22.0"
   },
   "types": "dist/index.d.ts",
   "dependencies": {
     "delay": "^5.0.0",
     "neverthrow": "^4.3.1"
-  },
-  "resolutions": {
-    "**/@typescript-eslint/eslint-plugin": "^4.14.0",
-    "**/@typescript-eslint/parser": "^4.22.0"
   },
   "devDependencies": {
     "@types/jest": "^28.1.1",
@@ -45,7 +47,9 @@
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
+    "format-package": "^7.0.0",
     "jest": "^28.1.1",
+    "prettier": "^2.6.2",
     "testdouble": "^3.16.2",
     "testdouble-jest": "^2.0.0",
     "ts-jest": "^28.0.4",
