@@ -4,7 +4,6 @@
 		"declaration": true,
 		"downlevelIteration": true,
 		"target": "ES2019",
-		"baseUrl": ".",
 		"module": "commonjs",
 		"removeComments": false,
 		"moduleResolution": "node",
@@ -22,7 +21,11 @@
 		"resolveJsonModule": true,
 		"jsx": "react",
 		"composite": true,
-		"paths": {}
+		"outDir": "./dist",
+		"baseUrl": "./src",
+		"rootDir": "./src"
 	},
+	"include": ["./src/**/*.ts"],
+  	"exclude": ["node_modules", "dist"],
 	"references": []
 }
