@@ -424,7 +424,7 @@ export class ResultUtils {
 	static combine<T, E>(
 		asyncResultList: ResultAsync<T, E>[]
 	): ResultAsync<T[], E> {
-		return ResultUtils.combine(asyncResultList);
+		return ResultAsync.combine(asyncResultList) as ResultAsync<T[], E>;
 	}
 
 	/**
