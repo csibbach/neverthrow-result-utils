@@ -1,5 +1,5 @@
 import delay from "delay";
-import { err, ok, ResultAsync, Result, errAsync, combine } from "neverthrow";
+import { err, ok, ResultAsync, errAsync } from "neverthrow";
 export class ResultUtils {
 	/**
 	 * Version of combine() with improved typing for heterogeneous lists
@@ -424,7 +424,7 @@ export class ResultUtils {
 	static combine<T, E>(
 		asyncResultList: ResultAsync<T, E>[]
 	): ResultAsync<T[], E> {
-		return combine(asyncResultList);
+		return ResultUtils.combine(asyncResultList);
 	}
 
 	/**
