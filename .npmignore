@@ -12,3 +12,5 @@ tsconfig.json
 tsconfig.tsbuildinfo
 yarn-error.log
 yarn.lock
+dist/index.d.ts.map
+dist/index.js.map

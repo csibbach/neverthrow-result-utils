@@ -24,6 +24,31 @@ describe("ResultUtils tests", () => {
 		expect(value).toBe(3);
 	});
 
+	test("combine returns using fromPromise", async () => {
+		// Arrange
+		let value = 0;
+		function asyncMethod() {
+			return ResultAsync.fromSafePromise(
+				new Promise((resolve) => {
+					resolve(value++);
+				})
+			);
+		}
+
+		// Act
+		const result = await ResultUtils.combine([
+			asyncMethod(),
+			asyncMethod(),
+			asyncMethod(),
+		]);
+
+		// Assert
+		expect(result.isErr()).toBeFalsy();
+		const results = result._unsafeUnwrap();
+		expect(results).toStrictEqual([0, 1, 2]);
+		expect(value).toBe(3);
+	});
+
 	test("combine returns an error if one method fails", async () => {
 		// Arrange
 		let value = 0;

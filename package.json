@@ -1,6 +1,6 @@
 {
   "name": "neverthrow-result-utils",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Extra utilities for working with Neverthrow results",
   "license": "MIT",
   "repository": {
@@ -27,7 +27,7 @@
     "compile": "tsc",
     "format": "eslint --fix ./src/**/*.ts ./test/**/*.ts && yarn format:pkg",
     "format:pkg": "format-package -w",
-    "test": "jest --runInBand --coverage --passWithNoTests"
+    "test": "jest --coverage"
   },
   "resolutions": {
     "**/@typescript-eslint/eslint-plugin": "^4.14.0",
@@ -36,7 +36,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "delay": "^5.0.0",
-    "neverthrow": "^4.3.1"
+    "neverthrow": "^5.1.0"
   },
   "devDependencies": {
     "@types/jest": "^28.1.1",
